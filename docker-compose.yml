@@ -1,0 +1,10 @@
+services:
+  jupyter-spark:
+    build: ./docker-image
+    ports:
+      - 8888:8888
+      - 4040:4040
+      - 4041:4041
+    volumes:
+      - ./work:/home/jovyan/work
+    command: start-notebook.py --NotebookApp.token=''
